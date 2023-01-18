@@ -31,9 +31,15 @@ const getBook = (book_id) => {
     .where({ book_id: book_id });
 };
 
+// Search books
+const searchBooks = (query) => {
+  return database("books").select("*").whereILike("book_name", `${query}%`);
+};
+
 // Exporting the function getAllPRoduct that gets the products of our ecommerce website
 module.exports = {
   getAllBooks,
   getGenre,
   getBook,
+  searchBooks,
 };
