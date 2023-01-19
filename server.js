@@ -4,6 +4,8 @@
 const express = require("express");
 
 const books_router = require("./routes/booksroutes.js");
+
+const users_router = require("./routes/users.js");
 // const order_router = require("./routes/orders.js");
 // const users_router = require("./routes/users.js");
 
@@ -25,7 +27,6 @@ app.use(express.json());
 
 app.use("/api/books", books_router);
 
-// app.use("/api/order", order_router);
-// app.use("/api/auth", users_router);
+app.use("/api/auth", users_router);
 
 app.use(express.static(__dirname + "/public"));
