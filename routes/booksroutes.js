@@ -12,7 +12,7 @@ const {
 router.get("/all", _getAllBooks);
 
 // To the books
-router.get("/:genre", _getGenre);
+router.get("/categories/:genre", _getGenre);
 router.get("/book/:id", _getBook);
 router.get("/search", _searchBooks);
 
